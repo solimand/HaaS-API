@@ -7,6 +7,16 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 var app = builder.Build();
 
+/* DEV TEST with TypedResults (and MapGroups) 
+*  Unit tests can call these methods and test that they return the correct type.
+*/
+// var hotelsItems = app.MapGroup("/hotels");
+// hotelsItems.MapGet("/", GetAllHotels);
+// static async Task<IResult> GetAllHotels(HotelDb db)
+// {
+//     return TypedResults.Ok(await db.Accomodations.ToArrayAsync());
+// }
+
 /* TEST Page */
 app.MapGet("/", () => "Hello World!");
 
