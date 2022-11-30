@@ -22,14 +22,21 @@ app.MapGet("/", () => "Hello World!");
 
 /* READ API */
 app.MapGet("/hotels", async (HotelDb db) =>
-    await db.Accomodations.ToListAsync());
+    await db.Accomodations.Include(x  => x.Rooms)
+    .ThenInclude(y => y.RoomType)
+    .ThenInclude(z => z.Price)
+    .ToListAsync());
 
 /* CREATE API */
 app.MapPost("/hotels", async (Accomodation hotel, HotelDb db) =>
 {
+    db.Rooms.AddRange(hotel.Rooms);
+    foreach(var currRoom in hotel.Rooms){
+        db.RoomTypes.Add(currRoom.RoomType);
+    }
     db.Accomodations.Add(hotel);
-    await db.SaveChangesAsync();
 
+    await db.SaveChangesAsync();
     return Results.Created($"/hotels/{hotel.Id}", hotel);
 });
 
@@ -54,10 +61,9 @@ app.MapPut("/hotels/{id}", async (int id, Accomodation inputHotel, HotelDb db) =
     if (hotel is null) return Results.NotFound();
 
     hotel.Name = inputHotel.Name;
-    hotel.RoomType = inputHotel.RoomType;
+    hotel.Rooms = inputHotel.Rooms;
 
     await db.SaveChangesAsync();
-
     return Results.NoContent();     // save and continue functionality -> user doesn't need to navigate away
 });
 
