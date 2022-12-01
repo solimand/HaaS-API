@@ -12,3 +12,6 @@ Hotel as a Service is a service for hotel management. The project implement basi
 - POST ```/hotels``` -> add an hotel to the list (CREATE)
 - DEL ```/hotels/{id}``` -> remove the hotel by ID (DELETE)
 - PUT ```/hotels/{id}``` -> edit the characteristics of an hotel (UPDATE)
+
+## HOW to try
+In the [Postman folder](postman/) there is a collection that you can import to run the CRUD operations on the running container. **NOTE**: you have to change the address of the container accordingly to you configuration. 
