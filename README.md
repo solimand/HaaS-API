@@ -15,3 +15,9 @@ Hotel as a Service is a service for hotel management. The project implement basi
 
 ## HOW to try
 In the [Postman folder](postman/) there is a collection that you can import to run the CRUD operations on the running container. **NOTE**: you have to change the address of the container accordingly to you configuration. 
+
+## Tools used
+- docker (client/server) version 20.10.21
+- dotnet sdk 7.0.100
+- VS code
+- Linux Threadripper 6.0.10-arch2-1
