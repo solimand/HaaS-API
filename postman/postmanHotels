@@ -1,0 +1,140 @@
+{
+	"info": {
+		"_postman_id": "5bd91afe-9e87-40b3-95da-933386fe8baa",
+		"name": "HotelAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1450014"
+	},
+	"item": [
+		{
+			"name": "GET main page",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5167/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5167",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET all hotels",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://172.17.0.2:5167/hotels",
+					"protocol": "http",
+					"host": [
+						"172",
+						"17",
+						"0",
+						"2"
+					],
+					"port": "5167",
+					"path": [
+						"hotels"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST hotel",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"rommatic3\",\r\n    \"rooms\":[\r\n            {\r\n                \"roomType\":{\r\n                    \"type\":1,\r\n                    \"price\": {\r\n                        \"money\": 100\r\n                    }\r\n                }\r\n            },\r\n            {\r\n                \"roomType\":{\r\n                    \"type\":2,\r\n                    \"price\": {\r\n                        \"money\": 50\r\n                    }\r\n                }\r\n            }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://172.17.0.2:5167/hotels",
+					"protocol": "http",
+					"host": [
+						"172",
+						"17",
+						"0",
+						"2"
+					],
+					"port": "5167",
+					"path": [
+						"hotels"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DEL hotel",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5167/hotels/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5167",
+					"path": [
+						"hotels",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT hotel",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"rommatic\",\r\n    \"roomType\":\"anotherType2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5167/hotels/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5167",
+					"path": [
+						"hotels",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
