@@ -4,6 +4,7 @@ Hotel as a Service is a service for hotel management. The project implement basi
 ## Deployment
 - cd \<proj-folder\>
 - ```docker compose up```
+- The container exposes the port ```5167``` on ```localhost``` interface
 
 ## Endpoints 
 - GET ```/``` -> hello world page

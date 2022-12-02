@@ -5,4 +5,4 @@ services:
     build: .
     command:  "HaaS-API.dll --urls=http://0.0.0.0:5167"
     ports: 
-      - "5167:5167"
+      - "127.0.0.1:5167:5167"
