@@ -31,13 +31,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://172.17.0.2:5167/hotels",
+					"raw": "http://localhost:5167/hotels",
 					"protocol": "http",
 					"host": [
-						"172",
-						"17",
-						"0",
-						"2"
+						"localhost"
 					],
 					"port": "5167",
 					"path": [
@@ -62,13 +59,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://172.17.0.2:5167/hotels",
+					"raw": "http://localhost:5167/hotels",
 					"protocol": "http",
 					"host": [
-						"172",
-						"17",
-						"0",
-						"2"
+						"localhost"
 					],
 					"port": "5167",
 					"path": [

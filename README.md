@@ -3,8 +3,7 @@ Hotel as a Service is a service for hotel management. The project implement basi
 
 ## Deployment
 - cd \<proj-folder\>
-- ```docker build -t aspnet-hotel -f Dockerfile .```
-- ```docker run -it --rm --name testdotnet aspnet-hotel```
+- ```docker compose up```
 
 ## Endpoints 
 - GET ```/``` -> hello world page
@@ -20,4 +19,6 @@ In the [Postman folder](postman/) there is a collection that you can import to r
 - docker (client/server) version 20.10.21
 - dotnet sdk 7.0.100
 - VS code
-- Linux Threadripper 6.0.10-arch2-1
+- Linux Threadripper 6.0.10-arch2-1\
+&nbsp;&nbsp;OR\
+  Microsoft Windows 10 Pro OS:10.0.19045 N/A Build 19045
