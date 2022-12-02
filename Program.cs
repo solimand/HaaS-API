@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 var connString = "Server=127.0.0.1;Database=AccomodationsList;User=sa;Password=01234567aA; Trust Server Certificate=true";
+// var connString = "Server=mysqlserver;Database=AccomodationsList;User=sa;Password=01234567aA; Trust Server Certificate=true";
 
 builder.Services.AddDbContext<HotelDb>(opt => opt.UseSqlServer(connString));
 // builder.Services.AddDbContext<HotelDb>(opt => opt.UseInMemoryDatabase("AccomodationsList"));
@@ -69,4 +70,9 @@ app.MapPut("/hotels/{id}", async (int id, Accomodation inputHotel, HotelDb db) =
     return Results.NoContent();     // save and continue functionality -> user doesn't need to navigate away
 });
 
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<HotelDb>();
+    db.Database.Migrate();
+}
 app.Run();
