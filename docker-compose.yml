@@ -1,8 +1,17 @@
 version: "3"
 
 services:
-  myhotel:
-    build: .
-    command:  "HaaS-API.dll --urls=http://0.0.0.0:5167"
-    ports: 
-      - "127.0.0.1:5167:5167"
+  # myhotel:
+  #   build: .
+  #   command:  "HaaS-API.dll --urls=http://0.0.0.0:5167"
+  #   ports: 
+  #     - "127.0.0.1:5167:5167"
+
+  mysql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    #image: mcr.microsoft.com/mssql/server:2017-latest
+    environment:
+      - SA_PASSWORD=01234567aA # TODO set as sys env
+      - ACCEPT_EULA=Y
+    ports:
+      - "127.0.0.1:1433:1433"

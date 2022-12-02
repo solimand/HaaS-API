@@ -19,7 +19,8 @@ In the [Postman folder](postman/) there is a collection that you can import to r
 ## Tools used
 - docker (client/server) version 20.10.21
 - dotnet sdk 7.0.100
-- VS code
+- VS code (developing)
+- Visual Studio 2019 (nuget manager and database explorer)
 - Linux Threadripper 6.0.10-arch2-1\
 &nbsp;&nbsp;OR\
   Microsoft Windows 10 Pro OS:10.0.19045 N/A Build 19045
