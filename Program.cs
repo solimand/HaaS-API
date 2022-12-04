@@ -1,15 +1,14 @@
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-var connString = "Server=127.0.0.1;Database=AccomodationsList;User=sa;Password=01234567aA; Trust Server Certificate=true";
-// var connString = "Server=mysqlserver;Database=AccomodationsList;User=sa;Password=01234567aA; Trust Server Certificate=true";
+// var connString = "Server=127.0.0.1;Database=AccomodationsList;User=sa;Password=01234567aA; Trust Server Certificate=true";
+var connString = "Server=mysqlserver;Database=AccomodationsList;User=sa;Password=01234567aA; Trust Server Certificate=true";
 
 builder.Services.AddDbContext<HotelDb>(opt => opt.UseSqlServer(connString));
 // builder.Services.AddDbContext<HotelDb>(opt => opt.UseInMemoryDatabase("AccomodationsList"));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 var app = builder.Build();
-
 /* DEV TEST with TypedResults (and MapGroups) 
 *  Unit tests can call these methods and test that they return the correct type.
 */
@@ -74,5 +73,6 @@ using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<HotelDb>();
     db.Database.Migrate();
+    Console.Out.WriteLine("DB Migrated!");
 }
 app.Run();

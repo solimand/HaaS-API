@@ -12,5 +12,4 @@ RUN dotnet publish -c Release -o out
 FROM mcr.microsoft.com/dotnet/aspnet:7.0
 WORKDIR /App
 COPY --from=build-env /App/out .
-ENTRYPOINT ["dotnet"] 
-    # , "HaaS-API.dll", "--urls=http://0.0.0.0:5167"]
+COPY ./wait-for-it.sh ..
